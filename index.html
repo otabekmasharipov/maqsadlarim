@@ -3,210 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniq Maqsadli Reja - Dashboard</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #4ade80;
-            --university-color: #38bdf8;
-            --home-color: #fb7185;
-            --text-color: #f8fafc;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        .container { max-width: 850px; width: 100%; text-align: center; }
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-            border: 1px solid #334155;
-        }
-        .header-card { border-top: 5px solid var(--accent-color); }
-        .date-display { font-size: 1.4rem; color: var(--accent-color); font-weight: bold; }
-        .time-row { 
-            display: flex; align-items: center; padding: 12px; 
-            border-bottom: 1px solid #334155; text-align: left;
-        }
-        .time-label { min-width: 120px; font-weight: bold; color: #fbbf24; }
-        .task-label { flex-grow: 1; margin-left: 10px; }
-        .cat-js { color: var(--accent-color); }
-        .cat-uni { color: var(--university-color); }
-        .cat-home { color: var(--home-color); }
-        
-        input[type="checkbox"] { transform: scale(1.4); margin-right: 15px; cursor: pointer; }
-        
-        .check-btn {
-            background: var(--accent-color);
-            color: #0f172a;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 20px;
-            width: 100%;
-            transition: 0.3s;
-        }
-        .check-btn:hover { opacity: 0.8; }
-        
-        #result-box {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            display: none;
-            background: #334155;
-            text-align: left;
-            line-height: 1.6;
-        }
-        .missed { color: #f87171; }
-        .done { color: var(--accent-color); }
-    </style>
+    <title>Portfolio - Professional Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<a href="old_plan.html" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">
-   ⬅️ 2027-yil maqsadlariga o'tish
-</a>
-<div class="container">
-    <div class="card header-card">
-        <div id="current-date" class="date-display">Yuklanmoqda...</div>
-        <div id="day-end" style="color: #fbbf24; margin: 10px 0;">Kun tugashiga: 00:00:00</div>
-        <div id="quote-display" style="font-style: italic; color: #94a3b8; min-height: 50px;"></div>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Portfolio.</a>
+            <ul class="nav-links">
+                <li><a href="#home">Bosh sahifa</a></li>
+                <li><a href="#about">Men haqimda</a></li>
+                <li><a href="#skills">Ko'nikmalar</a></li>
+                <li><a href="#projects">Loyihalar</a></li>
+                <li><a href="#contact">Bog'lanish</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-    <div class="card">
-        <h3>📋 Bugungi Batafsil Reja</h3>
-        <div id="schedule-content"></div>
-        
-        <button class="check-btn" onclick="checkDailyStats()">📊 Kunlik sarhisobni ko'rish</button>
-        
-        <div id="result-box"></div>
-    </div>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="greeting">Salom, men</p>
+                <h1 class="hero-title">Otabek Masharipov</h1>
+                <h2 class="hero-subtitle">Web Dasturchi & Dizayner</h2>
+                <p class="hero-description">
+                    Men zamonaviy va chiroyli veb-saytlar yaratishda tajribaga ega dasturchiman. 
+                    Har bir loyihamda mijozlar talablarini to'liq hisobga olib, 
+                    sifatli va funksional yechimlar taklif qilaman.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Mening loyihalarim</a>
+                    <a href="#contact" class="btn btn-secondary">Bog'lanish</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://t.me/yourusername" target="_blank" class="social-link telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="floating-badge">
+                        <i class="fas fa-code"></i>
+                        <span>Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
 
-<script>
-    const quotes = [
-        "\"Alloh sabrlilar bilan birgadir.\" (Baqara, 153)",
-        "\"Albatta, qiyinchilik bilan birga yengillik bordir.\" (Sharh, 6)",
-        "\"Vaqt qilichdir, agar sen uni kesmasang, u seni kesadi.\"",
-        "\"Ilm talab qilish har bir musulmonga farzdir.\" (Hadis)",
-        "\"Allohga tavakkal qiling, U kifoya qiluvchidir.\"",
-        "\"Sizga berilgan narsa dunyo matohidir, Allohning huzuridagi narsa yaxshiroqdir.\"",
-        "\"Harakat sizdan, baraka Allohdan.\"",
-        "\"Ikki ne'mat borki, ko'p odamlar unga aldanib qolishadi: sog'lik va bo'sh vaqt.\"",
-        "\"Bugungi ishni ertaga qo'yma.\"",
-        "\"Rizqingizni haloldan izlang, Alloh baraka beradi.\""
-    ];
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Men Haqimda</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <div class="about-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Web Dasturchi & UI/UX Dizayner</h3>
+                    <p>
+                        Men 3 yildan buyon veb-texnologiyalar bilan shug'ullanaman. 
+                        HTML, CSS, JavaScript, React va Node.js kabi texnologiyalarda 
+                        tajribaga egaman. Har bir loyihaga ijodiy yondashuv va 
+                        professional yechimlar bilan kelaman.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-label">Ism:</span>
+                            <span class="info-value">Otabek</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Yosh:</span>
+                            <span class="info-value">20</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Manzil:</span>
+                            <span class="info-value">Toshkent, O'zbekiston</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">otabek@email.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Tajriba:</span>
+                            <span class="info-value">3 yil</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Resume yuklash
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const workday = [
-        { id: 1, time: "06:30 - 07:15", task: "Bomdod namozi va Ruhiy quvvat", cat: "" },
-        { id: 2, time: "07:15 - 08:30", task: "Oltin soat: JavaScript (Focus)", cat: "cat-js" },
-        { id: 3, time: "08:30 - 09:30", task: "Nonushta va Uy ishlari (Yordam)", cat: "cat-home" },
-        { id: 4, time: "09:30 - 11:00", task: "Frontend: Amaliyot", cat: "cat-js" },
-        { id: 5, time: "11:00 - 12:00", task: "Dam olish (Kitob yoki hordiq)", cat: "" },
-        { id: 6, time: "12:00 - 13:00", task: "Peshin namozi va Tayyorgarlik", cat: "" },
-        { id: 7, time: "13:00 - 14:00", task: "O'qishga borish (Inglizcha audio)", cat: "cat-uni" },
-        { id: 8, time: "14:00 - 18:20", task: "Universitet darslari", cat: "cat-uni" },
-        { id: 9, time: "18:20 - 19:30", task: "Qaytish va Shom namozi", cat: "cat-uni" },
-        { id: 10, time: "19:30 - 20:30", task: "Kechki ovqat va Oila bilan dam", cat: "cat-home" },
-        { id: 11, time: "20:30 - 21:30", task: "Ingliz tili (Sintaksis)", cat: "cat-js" },
-        { id: 12, time: "21:30 - 22:30", task: "Xufton va Kunlik xulosa", cat: "" }
-    ];
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Mening Ko'nikmalarim</h2>
+            <div class="skills-content">
+                <div class="skills-text">
+                    <h3>Texnik Ko'nikmalar</h3>
+                    <p>
+                        Men doimiy ravishda o'rganish va rivojlanishni xush ko'raman. 
+                        Quyida mening asosiy texnik ko'nikmalarim keltirilgan.
+                    </p>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML5 & CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Node.js</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>UI/UX Dizayn</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h4>Frontend Dasturlash</h4>
+                        <p>Zamonaviy va responsive veb-saytlar yaratish</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-palette"></i>
+                        <h4>Web Dizayn</h4>
+                        <p>Chiroyli va foydalanuvchiga qulay interfeyslar</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h4>Backend Dasturlash</h4>
+                        <p>Server tomonli dasturlash va ma'lumotlar bazasini boshqarish</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Responsive Dizayn</h4>
+                        <p>Barcha qurilmalar uchun moslashuvchan dizayn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function init() {
-        // 1. Motivatsiyani o'zgartirish
-        document.getElementById('quote-display').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Mening Loyihalarim</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Barchasi</button>
+                <button class="filter-btn" data-filter="web">Web Saytlar</button>
+                <button class="filter-btn" data-filter="app">Ilovalar</button>
+                <button class="filter-btn" data-filter="design">Dizayn</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Sayt</h3>
+                        <p>Online do'kon platformasi to'liq funksional bilan</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> Ko'rish
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Kod
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Manager</h3>
+                        <p>Vazifalarni boshqarish uchun ilova</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> Ko'rish
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Kod
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dashboard Dizayn</h3>
+                        <p>Analitika dashboardi chiroyli interfeysi</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> Ko'rish
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-dribbble"></i> Dribbble
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mehmonxona Sayt</h3>
+                        <p>Mehmonxona bron qilish sayti</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> Ko'rish
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Kod
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Food Delivery</h3>
+                        <p>Oziq-ovqat yetkazib berish ilovasi</p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> Ko'rish
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Kod
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-screen"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile App UI</h3>
+                        <p>Mobil ilova interfeysi dizayni</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>Prototyping</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> Ko'rish
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // 2. Sanani chiqarish
-        const now = new Date();
-        document.getElementById('current-date').innerText = now.toLocaleDateString('uz-UZ', { weekday: 'long', month: 'long', day: 'numeric' });
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Bog'lanish</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Keling, bog'lanamiz!</h3>
+                    <p>
+                        Agar sizda biror bir loyiha yoki g'oya bo'lsa, 
+                        menga xabar qoldiring. Men har doim yangi imkoniyatlarga 
+                        ochiqman.
+                    </p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Manzil</h4>
+                                <p>Toshkent, O'zbekiston</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>otabek@email.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Telefon</h4>
+                                <p>+998 90 123 45 67</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://t.me/yourusername" target="_blank" class="social-icon telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://instagram.com/yourusername" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" class="social-icon github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ismingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email manzilingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Mavzu" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Xabaringiz" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Xabar yuborish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // 3. Rejani yuklash
-        let html = "";
-        workday.forEach(item => {
-            html += `
-            <div class="time-row">
-                <input type="checkbox" id="check-${item.id}" onchange="saveStatus(${item.id})">
-                <div class="time-label">${item.time}</div>
-                <div class="task-label ${item.cat}" id="label-${item.id}">${item.task}</div>
-            </div>`;
-        });
-        document.getElementById('schedule-content').innerHTML = html;
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">Portfolio.</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Bosh sahifa</a>
+                    <a href="#about">Men haqimda</a>
+                    <a href="#skills">Ko'nikmalar</a>
+                    <a href="#projects">Loyihalar</a>
+                    <a href="#contact">Bog'lanish</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://t.me/yourusername" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Portfolio. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
 
-        // 4. Avvalgi belgilanganlarni yuklash (Local Storage)
-        loadStatus();
-    }
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    function saveStatus(id) {
-        const isChecked = document.getElementById(`check-${id}`).checked;
-        localStorage.setItem(`task-${id}`, isChecked);
-    }
-
-    function loadStatus() {
-        workday.forEach(item => {
-            const saved = localStorage.getItem(`task-${item.id}`);
-            if (saved === "true") {
-                document.getElementById(`check-${item.id}`).checked = true;
-            }
-        });
-    }
-
-    function checkDailyStats() {
-        let doneCount = 0;
-        let missedTasks = [];
-        
-        workday.forEach(item => {
-            const isChecked = document.getElementById(`check-${item.id}`).checked;
-            if (isChecked) {
-                doneCount++;
-            } else {
-                missedTasks.push(item.task);
-            }
-        });
-
-        const resultBox = document.getElementById('result-box');
-        resultBox.style.display = "block";
-        
-        let report = `<b>Natija:</b> Bugun ${workday.length} ta vazifadan <span class="done">${doneCount} tasini</span> bajardingiz. <br><br>`;
-        
-        if (missedTasks.length > 0) {
-            report += `<b>Bajarilmaganlar:</b> <br>`;
-            missedTasks.forEach(task => {
-                report += `<span class="missed">❌ ${task}</span> <br>`;
-            });
-            report += `<br><i>Maslahat: Ertaga bu ishlarni birinchi bo'lib bitiring!</i>`;
-        } else {
-            report += `<span class="done">MashaAlloh! Bugun barcha rejalarni bajardingiz! 🚀</span>`;
-        }
-
-        resultBox.innerHTML = report;
-    }
-
-    function updateTimer() {
-        const now = new Date();
-        const end = new Date();
-        end.setHours(23, 59, 59);
-        const diff = end - now;
-        const h = Math.floor(diff / 3600000);
-        const m = Math.floor((diff % 3600000) / 60000);
-        const s = Math.floor((diff % 60000) / 1000);
-        document.getElementById('day-end').innerText = `Bugun tugashiga: ${h}s ${m}m ${s}s qoldi`;
-    }
-
-    setInterval(updateTimer, 1000);
-    window.onload = init;
-</script>
-
+    <script src="app.js"></script>
 </body>
 </html>
-
